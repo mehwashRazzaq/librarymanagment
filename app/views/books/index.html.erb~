@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<body style="background-color: 	#7FFFD4">
+<center> <style="font-size:300%">
+<h1>Welcome In Library Managment system </h1>
+<h2><b><strong><u><style="font-size:300%">Listing Books</u></b></strong></h2>
+
+<table border="10" bordercolor="red" <table style="width:80%"><style="font-size:500%">
+<tr><tr><style="font-size:300%">
+
+  <thead>
+    <tr>
+      <th><b>Tilte</b></th>
+      <th><b><style="font-size:300%"Author</b></th>
+      <th><b><style="font-size:300%"Rakeno</b></th>
+      <th><b><style="font-size:300%"Subjectcode</b></th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.tilte %></td>
+        <td><%= book.author %></td>
+        <td><%= book.rakeno %></td>
+        <td><%= book.subjectcode %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>

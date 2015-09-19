@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<body style="background-color: 	#7FFFD4">
+<center> <style="font-size:300%">
+<h1>Welcome In Library Managment system </h1>
+<h2><b><strong><u><style="font-size:300%">Listing Borrow</u></b></strong></h2>
+
+<table border="10" bordercolor="red" <table style="width:80%"><style="font-size:500%">
+<tr><tr><style="font-size:300%">
+
+  <thead>
+    <tr>
+      <th><b>Idate</b></th>
+      <th><b>Rdate</b></th>
+      <th><b>Book id</b></th>
+      <th><b>Member id</b></th>
+       <th><b>Book tilte</b></th>
+       <th><b>Member name</b></th>
+       
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @borrows.each do |borrow| %>
+      <tr>
+        <td><%= borrow.idate %></td>
+        <td><%= borrow.rdate %></td>
+        <td><%= borrow.book_id %></td>
+        <td><%= borrow.member_id %></td>
+        <td><%= borrow.book.tilte %></td>
+        <td><%= borrow.member.name %></td>
+
+
+        <td><%= link_to 'Show', borrow %></td>
+        <td><%= link_to 'Edit', edit_borrow_path(borrow)%> </td>
+        <td><%= link_to 'Destroy', borrow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Borrow', new_borrow_path %>

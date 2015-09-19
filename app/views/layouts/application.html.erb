@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%=image_tag("image.jpg",  :alt=>"user", :class=>"round",  :width=>"1270px",:height=>"250px",:align=>"center")%>
+<%=image_tag("images.jpgg",  :alt=>"user", :class=>"round",  :width=>"230px",:height=>"402px",:align=>"")%>
+<%=image_tag("ROR.png",  :alt=>"user", :class=>"round",  :width=>"230px",:height=>"402px",:align=>"left")%>
+<div id="project_header">
+
+	
+
+<%= link_to 'Books', books_path %> |
+ 
+<%= link_to 'members', members_path %> |
+	
+	
+
+
+<%= link_to 'borrow', borrows_path %> |
+
+<%= link_to "Sign up ",'#', :class => "signup_button round" %>|
+<%= link_to "login ",'#', :class => "signup_button round" %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

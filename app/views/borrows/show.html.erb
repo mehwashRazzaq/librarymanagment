@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idate:</strong>
+  <%= @borrow.idate %>
+</p>
+
+<p>
+  <strong>Rdate:</strong>
+  <%= @borrow.rdate %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @borrow.book %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @borrow.member %>
+</p>
+
+<%= link_to 'Edit', edit_borrow_path(@borrow) %> |
+<%= link_to 'Back', borrows_path %>

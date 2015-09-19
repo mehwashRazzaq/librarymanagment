@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<body style="background-color: 	#7FFFD4">
+<center> <style="font-size:300%">
+<h1>Welcome In Library Managment system </h1>
+<h2><b><strong><u><style="font-size:300%">Listing Members</u></b></strong></h2>
+
+<table border="10" bordercolor="red" <table style="width:80%"><style="font-size:500%">
+<tr><tr><style="font-size:300%">
+
+  <thead>
+    <tr>
+      <th><b>Name</b></th>
+      <th><b>Email</b>/th>
+      <th><b>Address</b></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%=member.name%></td>
+        <td><%= member.email %></td>
+        <td><%= member.address %></td>
+        <td><%= link_to 'Show', member %></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_member_path %>
