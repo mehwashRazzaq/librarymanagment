@@ -10,9 +10,9 @@
   <thead>
     <tr>
       <th><b>Tilte</b></th>
-      <th><b><style="font-size:300%"Author</b></th>
-      <th><b><style="font-size:300%"Rakeno</b></th>
-      <th><b><style="font-size:300%"Subjectcode</b></th>
+      <th><b>Author</b></th>
+      <th><b>Rakeno</b></th>
+      <th><b>Subjectcode</b></th>
       <th colspan="6"></th>
     </tr>
   </thead>
@@ -24,9 +24,13 @@
         <td><%= book.author %></td>
         <td><%= book.rakeno %></td>
         <td><%= book.subjectcode %></td>
-        <td><%= link_to 'Show', book %></td>
+<% if logged_in? %>
+<td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<
+<% end %>
+        
       </tr>
     <% end %>
   </tbody>

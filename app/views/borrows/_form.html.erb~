@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :member_id %><br>
-    <%=f.select(:member_id,  Member.all.collect {|p| [p.name, p.id]},{include_blank: 'None'}) %>
+    <%=f.select(:member_id,  Member.all.collect {|p| [p.name + "  (" + p.author + ")", p.id]},{include_blank: 'None'}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

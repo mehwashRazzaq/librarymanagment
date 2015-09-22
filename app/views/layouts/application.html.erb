@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render'layouts/header' %>
+	<% flash.each do |message_type,message| %>
+		<%= message %>
+	<% end %>
+
+
 <%=image_tag("image.jpg",  :alt=>"user", :class=>"round",  :width=>"1270px",:height=>"250px",:align=>"center")%>
 <%=image_tag("images.jpgg",  :alt=>"user", :class=>"round",  :width=>"230px",:height=>"402px",:align=>"")%>
 <%=image_tag("ROR.png",  :alt=>"user", :class=>"round",  :width=>"230px",:height=>"402px",:align=>"left")%>
@@ -18,13 +24,19 @@
  
 <%= link_to 'members', members_path %> |
 	
-	
+	<% if logged_in? %>
+
+<%= link_to "Sign up ",signup_path, :class => "signup_button round" %>|
+	<%= link_to "Log out",logout_path,method: "delete",:class => "signup_button round"   %>|
+	<% else %>
+<%= link_to "login ",login_path, :class => "signup_button round" %>|
+<% end %>
 
 
 <%= link_to 'borrow', borrows_path %> |
 
-<%= link_to "Sign up ",'#', :class => "signup_button round" %>|
-<%= link_to "login ",'#', :class => "signup_button round" %>
+
+
 </div>
 
 <%= yield %>
